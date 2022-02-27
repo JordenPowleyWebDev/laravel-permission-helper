@@ -18,17 +18,17 @@ class Permissions extends Component
     /**
      * @var string
      */
-    private string $userRole = "";
+    public string $userRole = "";
 
     /**
      * @var array
      */
-    private array $availableRoles = [];
+    public array $availableRoles = [];
 
     /**
      * @var array|string[]
      */
-    private array $permissions = [
+    public array $permissions = [
         'viewAny',
         'create',
     ];
@@ -36,7 +36,7 @@ class Permissions extends Component
     /**
      * @var array
      */
-    private array $constructedPermissions = [];
+    public array $constructedPermissions = [];
 
     /**
      * Permissions::__construct()
