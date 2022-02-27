@@ -27,11 +27,11 @@ trait PermissionTrait
     }
 
     /**
-     * PermissionTrait::getPermissionsAttribute()
+     * PermissionTrait::getPermissionsArrayAttribute()
      *
      * @return array
      */
-    public function getPermissionsAttribute(): array
+    public function getPermissionsArrayAttribute(): array
     {
         $user = Auth::user();
 
