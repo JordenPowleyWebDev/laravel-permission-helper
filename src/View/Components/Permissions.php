@@ -48,14 +48,14 @@ class Permissions extends Component
         $permissionConfig       = config('laravel-permission-helper.model-bindings');
 
         if (Auth::check()) {
-            $this->userRole = Auth::user()->role->value;
+            $this->userRole = Auth::user()->role_name;
 
             foreach ($permissionConfig as $key => $binding) {
                 $this->constructedPermissions[$key] = [];
 
                 foreach ($this->permissions as $permission) {
                     $this->constructedPermissions[$key][$permission] = Auth::user()->can($permission, $binding['model']);
-            }
+                }
             }
         }
     }
