@@ -4,6 +4,13 @@
     const PERMISSIONS   = @json($constructedPermissions);
 
     /**
+     * @returns {boolean}
+     */
+    const authCheck = () => {
+        return (!!USER_ROLE && USER_ROLE !== "");
+    }
+
+    /**
      * @param permission
      * @param model
      * @returns {*}

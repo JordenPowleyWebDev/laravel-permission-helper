@@ -31,7 +31,7 @@ class LaravelPermissionHelperServiceProvider extends ServiceProvider
             // Make Enum Files Available To The App
             $this->publishes([
                 __DIR__.'/../src/Enums' => base_path('resources/vendor/laravel-permission-helper/Enums|'),
-            ], 'views');
+            ], 'enums');
 
             // Make Blade Files Available To The App
             $this->publishes([
