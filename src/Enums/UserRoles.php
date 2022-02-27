@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 /**
  * Class UserRoles
  */
-final class UserRoles extends Enum
+final class UserRoles extends Enum implements UserRolesInterface
 {
     const SUPER_ADMIN   = 'super_admin';
     const ADMIN         = 'admin';
