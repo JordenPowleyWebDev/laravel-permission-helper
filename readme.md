@@ -1,6 +1,9 @@
 # laravel-permission-helper
 A  basic library for backend & frontend permission checks.
 
+## Installation
+`composer require jordenpowleywebdev/laravel-permission-helper`
+
 ## Publishing
 Blade views, JS components, SCSS files and the config can be published from this package
 using the following syntax:
@@ -8,11 +11,11 @@ using the following syntax:
 
 `TAG` can be replaced with the following tags to publish the corresponding files.
 
-| Tag        | Details                                                                        |
-|------------|--------------------------------------------------------------------------------|
-| config     | Publishes the related config file                                              |
-| enums      | Publishes the related Enum files                                               |
-| views      | Publishes the Blade views files to 'resources/vendor/laravel-components/views' |
+| Tag        | Details                                                                               |
+|------------|---------------------------------------------------------------------------------------|
+| config     | Publishes the related config file                                                     |
+| enums      | Publishes the related Enum files                                                      |
+| views      | Publishes the Blade views files to 'resources/vendor/laravel-permission-helper/views' |
 
 ## Setup
 Initially export the config using the following command:
