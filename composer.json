@@ -14,7 +14,8 @@
   },
   "autoload": {
     "psr-4": {
-      "JordenPowleyWebDev\\LaravelPermissionHelper\\": "src"
+      "JordenPowleyWebDev\\LaravelPermissionHelper\\": "src",
+      "JordenPowleyWebDev\\LaravelPermissionHelper\\Tests\\": "tests"
     }
   },
   "extra": {
@@ -27,6 +28,5 @@
   "require": {
     "illuminate/contracts": "^8.78",
     "laravel/framework": "^8.78"
-  },
-
+  }
 }

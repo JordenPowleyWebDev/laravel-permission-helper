@@ -30,7 +30,7 @@ class Permissions extends Component
             $this->userRole = Auth::user()->role->value;
         }
 
-        $this->availableRoles =
+        dd(config('laravel-permission-helper.roles-enum'));
     }
 
     /**
