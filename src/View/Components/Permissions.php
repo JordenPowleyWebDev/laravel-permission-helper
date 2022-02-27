@@ -15,22 +15,49 @@ use Illuminate\View\Component;
  */
 class Permissions extends Component
 {
+    /**
+     * @var string
+     */
     private string $userRole = "";
 
+    /**
+     * @var array
+     */
     private array $availableRoles = [];
 
-    private array $permissions = [];
+    /**
+     * @var array|string[]
+     */
+    private array $permissions = [
+        'viewAny',
+        'create',
+    ];
+
+    /**
+     * @var array
+     */
+    private array $constructedPermissions = [];
 
     /**
      * Permissions::__construct()
      */
     public function __construct()
     {
+        $this->availableRoles   = config('laravel-permission-helper.roles-enum')::asJsArray();
+
+        $permissionConfig       = config('laravel-permission-helper.model-bindings');
+
         if (Auth::check()) {
             $this->userRole = Auth::user()->role->value;
-        }
 
-        dd(config('laravel-permission-helper.roles-enum'));
+            foreach ($permissionConfig as $key => $binding) {
+                $this->constructedPermissions[$key] = [];
+
+                foreach ($this->permissions as $permission) {
+                    $this->constructedPermissions[$key][$permission] = Auth::user()->can($permission, $binding['model']);
+            }
+            }
+        }
     }
 
     /**

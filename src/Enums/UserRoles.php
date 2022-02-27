@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 /**
  * Class UserRoles
- * @package App\Enums
  */
 final class UserRoles extends Enum
 {
@@ -16,16 +15,16 @@ final class UserRoles extends Enum
     const USER          = 'user';
 
     /**
-     * UserRoles::toArray()
+     * UserRoles::asJsArray()
      *
      * @return string[]
      */
-    public static function toArray(): array
+    public static function asJsArray(): array
     {
         return [
-            self::SUPER_ADMIN,
-            self::ADMIN,
-            self::USER,
+            'SUPER_ADMIN'   => self::SUPER_ADMIN,
+            'ADMIN'         => self::ADMIN,
+            'USER'          => self::USER,
         ];
     }
 
@@ -43,7 +42,7 @@ final class UserRoles extends Enum
             case self::ADMIN:
                 return "Admin";
             case self::USER:
-                return "user";
+                return "User";
             default:
                 return $value;
         }
