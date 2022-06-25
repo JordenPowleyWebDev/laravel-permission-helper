@@ -7,6 +7,16 @@ use Illuminate\Support\Facades\Auth;
 trait PermissionTrait
 {
     /**
+     * PermissionTrait::getRoleIdAttribute();
+     *
+     * @return string
+     */
+    public function getRoleIdAttribute(): string
+    {
+        return $this->roles()->first()->id;
+    }
+
+    /**
      * PermissionTrait::getRoleNameAttribute();
      *
      * @return string
